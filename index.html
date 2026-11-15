@@ -310,10 +310,9 @@
         }
 
         .features-list li::before {
-            content: "•";
+            content: "✓";
             color: var(--text-primary);
             font-weight: 800;
-            font-size: 1.2rem;
         }
 
         .selector-box {
@@ -386,19 +385,6 @@
             object-fit: cover;
         }
 
-        .stock-tag {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            background: #fff;
-            border: 1px solid var(--border);
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
         .product-content {
             padding: 1.5rem;
             flex: 1;
@@ -417,6 +403,16 @@
             color: var(--text-secondary);
             font-size: 0.88rem;
             margin-bottom: 1.2rem;
+        }
+
+        .product-guarantee {
+            font-size: 0.78rem;
+            color: #16a34a;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .product-bottom {
@@ -596,7 +592,7 @@
 <body>
 
     <div class="top-bar">
-        ⚡ Distribución Mayorista y Venta Directa en Perú
+        ⚡ Carga Rápida y Distribución Directa en Perú
     </div>
 
     <!-- HEADER -->
@@ -615,18 +611,18 @@
     <div class="hero">
         <div class="hero-logo-display">R&S</div>
         <h1>Cargadores de alta velocidad para dispositivos Android y iPhone</h1>
-        <p>Potencia garantizada en kits completos de cubo y cable. Adquiere por unidad o accede a nuestros packs mayoristas para distribución.</p>
+        <p>Kits completos de cubo y cable con rendimiento seguro y estable. Adquiere por unidad o aprovecha nuestros packs especiales.</p>
         <div class="hero-actions">
-            <a href="#packs" class="btn-main">Ver Packs Mayoristas</a>
+            <a href="#packs" class="btn-main">Ver Packs Disponibles</a>
             <a href="#catalogo" class="btn-outline">Comprar por Unidad</a>
         </div>
     </div>
 
-    <!-- PACKS MAYORISTAS -->
+    <!-- PACKS -->
     <section id="packs">
         <div class="section-header">
-            <h2>Packs Mayoristas</h2>
-            <p>Esquemas de precios especiales para distribuidores y revendedores.</p>
+            <h2>Packs de Venta</h2>
+            <p>Elige la cantidad ideal para uso personal o para surtir tu negocio.</p>
         </div>
 
         <div class="grid-3">
@@ -638,8 +634,8 @@
                     <div class="price-tag">S/ 35 <span>/ kit</span></div>
                     <ul class="features-list">
                         <li>1 Cubo de carga rápida</li>
-                        <li>1 Cable reforzado (Tipo C o iPhone)</li>
-                        <li>Garantía de calidad</li>
+                        <li>1 Cable reforzado</li>
+                        <li>Garantía de funcionamiento</li>
                     </ul>
                 </div>
                 <div>
@@ -657,13 +653,13 @@
             <!-- PACK 3x3 -->
             <div class="card">
                 <div>
-                    <span class="badge-top">Mayorista A</span>
+                    <span class="badge-top">Ahorro 3x3</span>
                     <h3>Pack 3 x 3</h3>
                     <div class="price-tag">S/ 110 <span>/ 3 kits</span></div>
                     <ul class="features-list">
                         <li>3 Cubos de carga rápida</li>
                         <li>3 Cables a elección</li>
-                        <li>Ideal para reventa inicial</li>
+                        <li>Excelente opción inicial</li>
                     </ul>
                 </div>
                 <div>
@@ -682,13 +678,13 @@
             <!-- PACK 6x6 -->
             <div class="card featured">
                 <div>
-                    <span class="badge-top">Mayorista B</span>
+                    <span class="badge-top">Mayor Ganancia</span>
                     <h3>Pack 6 x 6</h3>
                     <div class="price-tag">S/ 200 <span>/ 6 kits</span></div>
                     <ul class="features-list">
                         <li>6 Cubos de carga rápida</li>
-                        <li>6 Cables a combinación libre</li>
-                        <li>Mejor margen para distribución</li>
+                        <li>6 Cables combinables</li>
+                        <li>Máximo beneficio por unidad</li>
                     </ul>
                 </div>
                 <div>
@@ -706,18 +702,17 @@
         </div>
     </section>
 
-    <!-- CATÁLOGO INDIVIDUAL CON IMÁGENES -->
+    <!-- CATÁLOGO INDIVIDUAL -->
     <section id="catalogo">
         <div class="section-header">
             <h2>Catálogo Individual</h2>
-            <p>Stock actual disponible para entrega inmediata.</p>
+            <p>Productos testeados y listos para entrega.</p>
         </div>
 
         <div class="grid-2">
             <!-- PRODUCTO 1: TIPO C -->
             <div class="product-card">
                 <div class="product-img-container">
-                    <span class="stock-tag">Stock: 10 unidades</span>
                     <img src="img/cubo-c.jpg" alt="Cargador Tipo C" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                     <div style="display:none; width:100%; height:100%; align-items:center; justify-content:center; color: var(--text-secondary); font-size: 0.85rem; font-weight:700;">
                         [ Coloca tu foto aquí: img/cubo-c.jpg ]
@@ -726,14 +721,15 @@
                 <div class="product-content">
                     <div>
                         <h3>Cargador Completo Android (Tipo C)</h3>
-                        <p>Cubo de pared y cable USB Tipo C de alta transferencia y carga estable.</p>
+                        <p>Cubo de pared y cable USB Tipo C de transferencia rápida y estable.</p>
+                        <div class="product-guarantee">✓ Falla de fábrica: Solucionado o intercambiado al instante</div>
                     </div>
                     <div class="product-bottom">
                         <div class="unit-price">
                             S/ 35.00
                             <small>Cubo + Cable</small>
                         </div>
-                        <button class="action-btn" style="width: auto; padding: 0.7rem 1.2rem;" onclick="addItem('Cargador Completo Tipo C', 35, 10)">+ Agregar</button>
+                        <button class="action-btn" style="width: auto; padding: 0.7rem 1.2rem;" onclick="addItem('Cargador Completo Tipo C', 35, 99)">+ Agregar</button>
                     </div>
                 </div>
             </div>
@@ -741,7 +737,6 @@
             <!-- PRODUCTO 2: IPHONE -->
             <div class="product-card">
                 <div class="product-img-container">
-                    <span class="stock-tag">Stock: 4 unidades</span>
                     <img src="img/cubo-iphone.jpg" alt="Cargador iPhone" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                     <div style="display:none; width:100%; height:100%; align-items:center; justify-content:center; color: var(--text-secondary); font-size: 0.85rem; font-weight:700;">
                         [ Coloca tu foto aquí: img/cubo-iphone.jpg ]
@@ -751,13 +746,14 @@
                     <div>
                         <h3>Cargador Completo iPhone</h3>
                         <p>Cubo de carga y cable Lightning con protección contra sobretensiones.</p>
+                        <div class="product-guarantee">✓ Falla de fábrica: Solucionado o intercambiado al instante</div>
                     </div>
                     <div class="product-bottom">
                         <div class="unit-price">
                             S/ 35.00
                             <small>Cubo + Cable</small>
                         </div>
-                        <button class="action-btn" style="width: auto; padding: 0.7rem 1.2rem;" onclick="addItem('Cargador Completo iPhone', 35, 4)">+ Agregar</button>
+                        <button class="action-btn" style="width: auto; padding: 0.7rem 1.2rem;" onclick="addItem('Cargador Completo iPhone', 35, 99)">+ Agregar</button>
                     </div>
                 </div>
             </div>
@@ -771,7 +767,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>RyS_tec — Todos los derechos reservados</p>
+        <p>RyS_tec 2026 — Todos los derechos reservados</p>
     </footer>
 
     <!-- DRAWER CARRITO -->
@@ -800,7 +796,6 @@
     </div>
 
     <script>
-        // CUANDO TENGAS EL NÚMERO LISTO, PONLO AQUÍ DENTRO DE LAS COMILLAS (Ej: "51999888777")
         const WHATSAPP_NUMBER = ""; 
 
         let cart = [];
@@ -816,12 +811,7 @@
         function addItem(name, price, maxStock = 99) {
             const existing = cart.find(item => item.name === name);
             if (existing) {
-                if (existing.qty < maxStock) {
-                    existing.qty++;
-                } else {
-                    alert(`Solo hay ${maxStock} unidades disponibles.`);
-                    return;
-                }
+                existing.qty++;
             } else {
                 cart.push({ name, price, qty: 1, maxStock });
             }
@@ -831,7 +821,7 @@
 
         function addPack(packName, price, selectId) {
             const detail = document.getElementById(selectId).value;
-            addItem(`${packName} [${detail}]`, price, 20);
+            addItem(`${packName} [${detail}]`, price, 99);
         }
 
         function changeQty(index, delta) {
@@ -839,10 +829,8 @@
             const newQty = item.qty + delta;
             if (newQty <= 0) {
                 cart.splice(index, 1);
-            } else if (newQty <= item.maxStock) {
-                item.qty = newQty;
             } else {
-                alert(`Límite de stock alcanzado.`);
+                item.qty = newQty;
             }
             updateCartUI();
         }
@@ -906,7 +894,7 @@
                 alert("Canal de WhatsApp en configuración. Pronto estará activo.");
                 return;
             }
-            const message = "Hola *RyS_tec*, quisiera consultar sobre los cargadores y packs mayoristas.";
+            const message = "Hola *RyS_tec*, quisiera consultar sobre los cargadores y packs disponibles.";
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
         }
     </script>
