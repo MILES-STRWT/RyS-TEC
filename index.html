@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>R&S TEC | Cargadores y Packs Mayoristas</title>
+    <title>R&S TEC | Cargadores, AirPods y Packs Mayoristas</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -177,15 +177,15 @@
         }
 
         /* GRIDS */
-        .grid-3 {
+        .grid-4 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
         }
 
-        .grid-2 {
+        .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
         }
 
@@ -327,7 +327,7 @@
         }
 
         .product-img-container {
-            height: 240px;
+            height: 220px;
             background: var(--bg-secondary);
             position: relative;
             display: flex;
@@ -340,6 +340,21 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        .img-fallback {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 1rem;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 700;
         }
 
         .product-content {
@@ -359,7 +374,7 @@
         .product-content p {
             color: var(--text-secondary);
             font-size: 0.88rem;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
         }
 
         .product-guarantee {
@@ -378,6 +393,7 @@
             align-items: center;
             border-top: 1px solid var(--border);
             padding-top: 1rem;
+            gap: 10px;
         }
 
         .unit-price {
@@ -456,6 +472,12 @@
         .cart-item span {
             font-size: 0.8rem;
             color: var(--text-secondary);
+            display: block;
+        }
+
+        .wholesale-tag {
+            color: #16a34a !important;
+            font-weight: 700 !important;
         }
 
         .qty-box {
@@ -549,7 +571,7 @@
 <body>
 
     <div class="top-bar">
-        ⚡ Carga Rápida y Distribución Directa en Perú
+        ⚡ Carga Rápida, Audio y Distribución Directa en Perú
     </div>
 
     <!-- HEADER -->
@@ -577,7 +599,7 @@
             <p>Elige la cantidad ideal para uso personal o para surtir tu negocio.</p>
         </div>
 
-        <div class="grid-3">
+        <div class="grid-4">
             <!-- UNIDAD -->
             <div class="card">
                 <div>
@@ -605,9 +627,9 @@
             <!-- PACK 3x3 -->
             <div class="card">
                 <div>
-                    <span class="badge-top">Ahorro 3x3</span>
+                    <span class="badge-top">Pack 3x3</span>
                     <h3>Pack 3 x 3</h3>
-                    <div class="price-tag">S/ 110 <span>/ 3 kits</span></div>
+                    <div class="price-tag">S/ 100 <span>/ 3 kits</span></div>
                     <ul class="features-list">
                         <li>3 Cubos de carga rápida</li>
                         <li>3 Cables a elección</li>
@@ -623,7 +645,7 @@
                             <option value="1 Tipo C + 2 iPhone">1 Tipo C + 2 iPhone</option>
                         </select>
                     </div>
-                    <button class="action-btn" onclick="addPack('Pack 3x3 (3 Cubos + 3 Cables)', 110, 'model-3x3')">Agregar Pack 3x3</button>
+                    <button class="action-btn" onclick="addPack('Pack 3x3 (3 Cubos + 3 Cables)', 100, 'model-3x3')">Agregar Pack 3x3</button>
                 </div>
             </div>
 
@@ -651,6 +673,30 @@
                     <button class="action-btn" onclick="addPack('Pack 6x6 (6 Cubos + 6 Cables)', 200, 'model-6x6')">Agregar Pack 6x6</button>
                 </div>
             </div>
+
+            <!-- PACK MAYORISTA AIRPODS -->
+            <div class="card featured">
+                <div>
+                    <span class="badge-top">Mayorista x6</span>
+                    <h3>Pack AirPods x6</h3>
+                    <div class="price-tag">S/ 330 <span>/ 6 und.</span></div>
+                    <ul class="features-list">
+                        <li>6 unidades de AirPods</li>
+                        <li>Precio mayorista: S/ 55 c/u</li>
+                        <li>Ideal para reventa</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="selector-box">
+                        <label>Presentación:</label>
+                        <select id="model-airpods-pack">
+                            <option value="Estándar x6 unidades">Estándar (6 unidades)</option>
+                            <option value="Consulta de versión en WhatsApp">Consultar versión al cerrar</option>
+                        </select>
+                    </div>
+                    <button class="action-btn" onclick="addPack('Pack Mayorista AirPods (6 und. a S/ 55 c/u)', 330, 'model-airpods-pack')">Agregar Pack x6</button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -658,16 +704,17 @@
     <section id="catalogo">
         <div class="section-header">
             <h2>Catálogo Individual</h2>
-            <p>Productos testeados y listos para entrega.</p>
+            <p>Productos testeados y listos para entrega. Desde 6 unidades de AirPods aplica precio mayorista (S/ 55 c/u).</p>
         </div>
 
-        <div class="grid-2">
+        <div class="grid-3">
             <!-- PRODUCTO 1: TIPO C -->
             <div class="product-card">
                 <div class="product-img-container">
-                    <img src="cubo-c.jpg" alt="Cargador Tipo C" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div style="display:none; width:100%; height:100%; align-items:center; justify-content:center; color: var(--text-secondary); font-size: 0.85rem; font-weight:700;">
-                        [ Sube la foto como: cubo-c.jpg ]
+                    <img src="cubo-c.jpg" alt="Cargador Tipo C" onload="this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                    <div class="img-fallback">
+                        <span>CARGADOR TIPO C</span>
+                        <small>[ Sube la foto como: cubo-c.jpg ]</small>
                     </div>
                 </div>
                 <div class="product-content">
@@ -681,7 +728,7 @@
                             S/ 35.00
                             <small>Cubo + Cable</small>
                         </div>
-                        <button class="action-btn" style="width: auto; padding: 0.7rem 1.2rem;" onclick="addItem('Cargador Completo Tipo C', 35, 99)">+ Agregar</button>
+                        <button class="action-btn" style="width: auto; padding: 0.7rem 1.2rem;" onclick="addItem('Cargador Completo Tipo C', 35)">+ Agregar</button>
                     </div>
                 </div>
             </div>
@@ -689,9 +736,10 @@
             <!-- PRODUCTO 2: IPHONE -->
             <div class="product-card">
                 <div class="product-img-container">
-                    <img src="cubo-iphone.jpg" alt="Cargador iPhone" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div style="display:none; width:100%; height:100%; align-items:center; justify-content:center; color: var(--text-secondary); font-size: 0.85rem; font-weight:700;">
-                        [ Sube la foto como: cubo-iphone.jpg ]
+                    <img src="cubo-iphone.jpg" alt="Cargador iPhone" onload="this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                    <div class="img-fallback">
+                        <span>CARGADOR IPHONE</span>
+                        <small>[ Sube la foto como: cubo-iphone.jpg ]</small>
                     </div>
                 </div>
                 <div class="product-content">
@@ -705,7 +753,32 @@
                             S/ 35.00
                             <small>Cubo + Cable</small>
                         </div>
-                        <button class="action-btn" style="width: auto; padding: 0.7rem 1.2rem;" onclick="addItem('Cargador Completo iPhone', 35, 99)">+ Agregar</button>
+                        <button class="action-btn" style="width: auto; padding: 0.7rem 1.2rem;" onclick="addItem('Cargador Completo iPhone', 35)">+ Agregar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 3: AIRPODS -->
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="airpods.jpg" alt="AirPods" onload="this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                    <div class="img-fallback">
+                        <span>AIRPODS</span>
+                        <small>[ Sube la foto como: airpods.jpg ]</small>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <div>
+                        <h3>AirPods</h3>
+                        <p>Audífonos inalámbricos con estuche de carga. Unidad a S/ 99 y desde 6 unidades a S/ 55 c/u.</p>
+                        <div class="product-guarantee">✓ Falla de fábrica: Solucionado o intercambiado al instante</div>
+                    </div>
+                    <div class="product-bottom">
+                        <div class="unit-price">
+                            S/ 99.00
+                            <small>Mayorista 6+: S/ 55 c/u</small>
+                        </div>
+                        <button class="action-btn" style="width: auto; padding: 0.7rem 1.2rem;" onclick="addItem('AirPods', 99, 55, 6)">+ Agregar</button>
                     </div>
                 </div>
             </div>
@@ -748,9 +821,16 @@
     </div>
 
     <script>
-        const WHATSAPP_NUMBER = ""; 
+        const WHATSAPP_NUMBER = "51949776995";
 
         let cart = [];
+
+        function getUnitPrice(item) {
+            if (item.wholesalePrice !== null && item.wholesaleMinQty !== null && item.qty >= item.wholesaleMinQty) {
+                return item.wholesalePrice;
+            }
+            return item.basePrice;
+        }
 
         function toggleCart() {
             document.getElementById('cart-overlay').classList.toggle('open');
@@ -760,12 +840,12 @@
             if (e.target.id === 'cart-overlay') toggleCart();
         }
 
-        function addItem(name, price, maxStock = 99) {
+        function addItem(name, basePrice, wholesalePrice = null, wholesaleMinQty = null) {
             const existing = cart.find(item => item.name === name);
             if (existing) {
                 existing.qty++;
             } else {
-                cart.push({ name, price, qty: 1, maxStock });
+                cart.push({ name, basePrice, wholesalePrice, wholesaleMinQty, qty: 1 });
             }
             updateCartUI();
             toggleCart();
@@ -773,7 +853,7 @@
 
         function addPack(packName, price, selectId) {
             const detail = document.getElementById(selectId).value;
-            addItem(`${packName} [${detail}]`, price, 99);
+            addItem(`${packName} [${detail}]`, price);
         }
 
         function changeQty(index, delta) {
@@ -793,7 +873,7 @@
             const totalEl = document.getElementById('cart-total');
 
             const totalItems = cart.reduce((acc, item) => acc + item.qty, 0);
-            const totalPrice = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+            const totalPrice = cart.reduce((acc, item) => acc + (getUnitPrice(item) * item.qty), 0);
 
             countEl.textContent = totalItems;
             totalEl.textContent = `S/ ${totalPrice.toFixed(2)}`;
@@ -803,19 +883,24 @@
                 return;
             }
 
-            container.innerHTML = cart.map((item, idx) => `
-                <div class="cart-item">
-                    <div>
-                        <h4>${item.name}</h4>
-                        <span>S/ ${item.price.toFixed(2)} c/u</span>
+            container.innerHTML = cart.map((item, idx) => {
+                const unitPrice = getUnitPrice(item);
+                const isWholesale = item.wholesalePrice !== null && item.qty >= item.wholesaleMinQty;
+                return `
+                    <div class="cart-item">
+                        <div>
+                            <h4>${item.name}</h4>
+                            <span>S/ ${unitPrice.toFixed(2)} c/u</span>
+                            ${isWholesale ? `<span class="wholesale-tag">✓ Precio mayorista aplicado (${item.wholesaleMinQty}+ und.)</span>` : ''}
+                        </div>
+                        <div class="qty-box">
+                            <button class="qty-btn" onclick="changeQty(${idx}, -1)">-</button>
+                            <strong>${item.qty}</strong>
+                            <button class="qty-btn" onclick="changeQty(${idx}, 1)">+</button>
+                        </div>
                     </div>
-                    <div class="qty-box">
-                        <button class="qty-btn" onclick="changeQty(${idx}, -1)">-</button>
-                        <strong>${item.qty}</strong>
-                        <button class="qty-btn" onclick="changeQty(${idx}, 1)">+</button>
-                    </div>
-                </div>
-            `).join('');
+                `;
+            }).join('');
         }
 
         function sendWhatsApp() {
@@ -831,10 +916,12 @@
 
             let message = "Hola *R&S TEC*, quiero cerrar la compra del siguiente pedido:\n\n";
             cart.forEach(item => {
-                message += `• ${item.qty}x ${item.name} — S/ ${(item.price * item.qty).toFixed(2)}\n`;
+                const unitPrice = getUnitPrice(item);
+                const subtotal = unitPrice * item.qty;
+                message += `• ${item.qty}x ${item.name} (S/ ${unitPrice.toFixed(2)} c/u) — S/ ${subtotal.toFixed(2)}\n`;
             });
 
-            const total = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+            const total = cart.reduce((acc, item) => acc + (getUnitPrice(item) * item.qty), 0);
             message += `\n*Total: S/ ${total.toFixed(2)}*\n¿Me confirman disponibilidad y método de entrega?`;
 
             const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
@@ -846,9 +933,10 @@
                 alert("Canal de WhatsApp en configuración. Pronto estará activo.");
                 return;
             }
-            const message = "Hola *R&S TEC*, quisiera consultar sobre los cargadores y packs disponibles.";
+            const message = "Hola *R&S TEC*, quisiera consultar sobre los cargadores, AirPods y packs disponibles.";
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
         }
     </script>
 </body>
 </html>
+
